@@ -74,5 +74,36 @@ async def list_dir(path:str):
     except Exception as e:
         return f"Error reading dirctory: {str(e)}"
 
+@mcp.tool(name="search_in_files")
+async def search_in_files(query:str, path:str):
+    """Search for a string in all files under the given path.
+    Returns file paths and matching lines."""
+    if not os.path.exists(path):
+        return f"Error: Path does not exist -> {path}"
+    if os.path.isfile(path):
+        files_to_search = [path]
+    else:
+        files_to_search = []
+        for root, dirs, files in os.walk(path):
+            for file in files:
+               files_to_search.append(os.path.join(root, file))
+
+    matches = []
+    def _search():
+        for file_path in files_to_search:
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    for i, line in enumerate(f,1):
+                        if query in line:
+                            matches.append(f"{file_path} [Line {i}] : {line.strip()}")
+            except Exception:
+                continue
+        if not matches:
+            return f"No matches found for '{query}' in {path}"
+        return "\n".join(matches)
+    return await asyncio.to_thread(_search)
+
+
+
 
 mcp_app = mcp.streamable_http_app()

@@ -75,20 +75,24 @@ async def main():
         tool_list = await client.tool_list()
         for tool in tool_list:
             print("Tools : ", tool.name)
+
         call_Shell_tool = await client.tool_call(tool_name=tool.name, arguments={"cmd":"dir"})
         raw_output = call_Shell_tool[0].text
         shell_response = json.loads(raw_output)
         cmd_output = shell_response.get("error") or shell_response.get("output")
         print("Shell Tool Output : ", cmd_output)
 
-        call_read_file_tool = await client.tool_call(tool_name="read_files", arguments={"path":r"D:\Hassaan's Work\quarter_3_sdk\sdk_level_two_quiz_prep\linkedin_post_contribution.txt"})
+        call_read_file_tool = await client.tool_call(tool_name="read_files", arguments={"path":r"D:\Hassaan_Work\quarter_3_sdk\sdk_level_two_quiz_prep\linkedin_post_contribution.txt"})
         print("Read File Tool Call: ", call_read_file_tool[0].text)
 
-        call_write_file_tool = await client.tool_call(tool_name="write_file", arguments={"path":r"D:\Hassaan's Work\quarter_4\self_study\my_own_cli\ai_native_app\mcp_server\README.md","content":"Hello written by tool"})
+        call_write_file_tool = await client.tool_call(tool_name="write_file", arguments={"path":r"D:\Hassaan_Work\quarter_4\self_study\ai_native_apps\my_own_cli\mcp_server\README.md","content":"Hello written by tool"})
         print("Write File Tool : ", call_write_file_tool[0].text)
 
-        call_list_dir_tool = await client.tool_call(tool_name="list_dir", arguments={"path":r"D:\Hassaan's Work\quarter_4\self_study\my_own_cli\ai_native_app\mcp_server"})
+        call_list_dir_tool = await client.tool_call(tool_name="list_dir", arguments={"path":r"D:\Hassaan_Work\quarter_4\self_study\ai_native_apps\my_own_cli\mcp_server"})                                    
         print("List Dir Tool : ", call_list_dir_tool[0].text)
+
+        call_search_in_file_tool = await client.tool_call(tool_name="search_in_files", arguments={"query":"this","path":r"D:\Hassaan_Work\quarter_4\self_study\ai_native_apps\my_own_cli\mcp_server\README.md"})
+        print("Search In Files Tool: ",call_search_in_file_tool[0].text)
 
 
 asyncio.run(main())
