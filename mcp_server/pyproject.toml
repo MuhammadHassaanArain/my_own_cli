@@ -1,0 +1,12 @@
+[project]
+name = "mcp-server"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiofiles>=25.1.0",
+    "mcp>=1.21.2",
+    "rich>=14.2.0",
+    "uvicorn>=0.38.0",
+]

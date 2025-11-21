@@ -1,0 +1,179 @@
+------------------------------
+Name: run_shell
+Purpose: run safe commands for automation, debugging, package info
+Schema:
+
+{
+  "cmd": "string",
+  "timeout": "number (optional)"
+}
+/////------------------------------
+2. File Read Tool
+
+Name: read_file
+Purpose: agent can inspect code, configs, docs
+Schema:
+
+{
+  "path": "string"
+}
+//////------------------------------
+3. File Write Tool
+
+Name: write_file
+Purpose: agent can create files, edit code, generate project structures
+Schema:
+
+{
+  "path": "string",
+  "content": "string"
+}
+//////------------------------------
+4. List Directory Tool
+
+Name: list_dir
+Purpose: agent can see folder structure
+Schema:
+
+{
+  "path": "string"
+}
+//////------------------------------
+5. Search in Files Tool
+
+Name: search_in_files
+Purpose: find code usage, patterns
+Schema:
+
+{
+  "query": "string",
+  "path": "string"
+}
+------------------------------
+⭐ LEVEL 2 — Developer Tools (for coding agents)
+6. Code Formatter Tool
+
+Name: format_code
+Purpose: beautify Python, JavaScript, etc.
+Schema:
+
+{
+  "language": "string",
+  "code": "string"
+}
+------------------------------
+7. Python Runner Tool
+
+Name: run_python
+Purpose: agent executes Python snippets in sandbox
+Schema:
+
+{
+  "code": "string"
+}
+------------------------------
+8. Git Tool (all-in-one or split)
+
+Split into 3 tools:
+
+git_status
+git_diff
+git_commit_push
+
+Schema (commit):
+
+{
+  "message": "string"
+}
+------------------------------
+9. Dependency Installer Tool
+
+Name: install_package
+Purpose: install Python or npm packages
+Schema:
+
+{
+  "manager": "pip/npm",
+  "package": "string"
+}
+------------------------------
+🔥 LEVEL 3 — Power Tools (Gemini CLI–style)
+10. Project Generator Tool
+
+Name: generate_project
+Purpose: scaffold full apps
+Schema:
+
+{
+  "framework": "django/fastapi/react/nextjs",
+  "name": "string"
+}
+------------------------------
+11. HTTP Request Tool
+
+Name: http_request
+Purpose: call APIs directly from the agent
+Schema:
+
+{
+  "method": "GET/POST",
+  "url": "string",
+  "headers": "object",
+  "body": "object"
+}
+------------------------------
+12. Database Tool (SQLite local)
+
+Name: query_db
+Schema:
+
+{
+  "query": "string"
+}
+------------------------------
+13. Browser (Mini Web Scraper) Tool
+
+Name: fetch_page
+Schema:
+
+{
+  "url": "string"
+}
+------------------------------
+14. Archive Tool
+
+Name: zip_folder
+Schema:
+
+{
+  "path": "string",
+  "output": "string"
+}
+------------------------------
+15. System Info Tool
+
+Name: system_info
+Purpose: get CPU, RAM, OS information
+Schema: none required or minimal:
+
+{}
+------------------------------
+
+
+
+
+
+
+######################################
+1. run_shell
+2. read_file
+3. write_file
+4. list_dir
+5. search_in_files
+-----------------------------
+6. git tools
+7. run_python
+8. http_request
+-----------------------------
+9. project generator
+10. zip / system / browser tools
