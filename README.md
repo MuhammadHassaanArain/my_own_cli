@@ -24,7 +24,7 @@ Install dependencies with:
 
 ```bash
 
-git clone https://github.com/yourusername/my_own_cli.git
+git clone https://github.com/MuhammadHassaanArain/my_own_cli.git
 cd my_own_cli
 
 pip install -r requirements.txt
