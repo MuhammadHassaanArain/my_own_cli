@@ -25,7 +25,12 @@ async def main():
             break
 
         with console.status("[cyan]Thinking...[/cyan]", spinner="dots"):
-            response = await run_agent(user_input) or "No response received."
+            try:
+                response = await run_agent(user_input) or "No Response Received"
+            except Exception as e:
+                console.print(f"[red]Error: {e}[/red]")
+                continue
+
 
 
 

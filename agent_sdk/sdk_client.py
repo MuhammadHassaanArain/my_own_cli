@@ -25,9 +25,9 @@ async def run_agent(user_input:str):
         agent = Agent(
         name="Assistant",
         instructions="You are a helpful assistant.",
-        
+        model=model,
         mcp_servers=[server],
         model_settings=ModelSettings(tool_choice="auto"),
         )
         result = await Runner.run(agent, input=user_input, run_config=config)
-        print(result.final_output)
+        return result.final_output
