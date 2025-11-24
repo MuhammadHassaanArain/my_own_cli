@@ -11,6 +11,10 @@ dependencies = [
     "python-dotenv>=1.2.1",
     "rich>=14.2.0",
 ]
-packages = ["cli", "agent_sdk", "mcp_server"]
+
 [project.scripts]
 my-own-cli = "cli.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cli", "agent_sdk", "mcp_server"]
