@@ -30,5 +30,5 @@ cd my_own_cli
 pip install -r requirements.txt
 
 # Run CLI
-python -m cli.main
+python -m cli.main:main
 ```

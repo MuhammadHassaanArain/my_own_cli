@@ -1,8 +1,9 @@
 [project]
 name = "my-own-cli"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI CLI powered by OpenAI Agent SDK + MCP"
 readme = "README.md"
+authors = [{ name = "M.Hassaan Arain" }]
 requires-python = ">=3.13"
 dependencies = [
     "mcp>=1.22.0",
@@ -10,3 +11,6 @@ dependencies = [
     "python-dotenv>=1.2.1",
     "rich>=14.2.0",
 ]
+
+[project.scripts]
+my-own-cli = "cli.main:main"

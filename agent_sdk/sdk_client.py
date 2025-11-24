@@ -4,10 +4,10 @@ from agents import Agent, Runner,AsyncOpenAI, OpenAIChatCompletionsModel, ModelS
 from agents.mcp import MCPServerStreamableHttp, MCPServerStreamableHttpParams
 
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv("API_KEY")
 
 client = AsyncOpenAI(
-    api_key=GEMINI_API_KEY,
+    api_key=API_KEY,
     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
 )
 model = OpenAIChatCompletionsModel(
