@@ -19,7 +19,7 @@ It allows you to interact with an AI agent directly from your command line in a 
 - Python 3.11+  
 - `agent_sdk` (your custom agent SDK)  
 - `rich` Python library  
-
+<!-- 
 Install dependencies with:
 
 ```bash
@@ -31,4 +31,18 @@ pip install -r requirements.txt
 
 # Run CLI
 python -m cli.main:main
+``` -->
+## How to Use it
+
+
+
+```bash
+# Install the CLI
+pip install git+https://github.com/MuhammadHassaanArain/my_own_cli.git
+
+# Run the MCP server
+uv run uvicorn mcp_server.server:mcp_app --reload
+
+# Run the CLI
+my-own-cli
 ```
