@@ -10,6 +10,7 @@ dependencies = [
     "openai-agents>=0.6.1",
     "python-dotenv>=1.2.1",
     "rich>=14.2.0",
+    "aiofiles"
 ]
 
 [project.scripts]
