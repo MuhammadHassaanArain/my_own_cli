@@ -41,7 +41,8 @@ python -m cli.main:main
 pip install git+https://github.com/MuhammadHassaanArain/my_own_cli.git
 
 # Run the MCP server
-uv run uvicorn mcp_server.server:mcp_app --reload
+uv run uvicorn mcp_server.server:mcp_app --host 127.0.0.1 --port 8000 --reload
+
 
 # Run the CLI
 my-own-cli

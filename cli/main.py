@@ -60,7 +60,7 @@ You must run the MCP server manually in another terminal.
 
 Open a NEW terminal and paste this command:
 
-[bold yellow]uv run uvicorn mcp_server.server:mcp_app --reload[/bold yellow]
+[bold yellow]uv run uvicorn mcp_server.server:mcp_app --host 127.0.0.1 --port 8000 --reload[/bold yellow]
 
 After starting the server, return to this terminal and use the CLI.
 """)
