@@ -1,4 +1,4 @@
-# 🚀 My Own CLI — AI Terminal Assistant
+# 🚀 [My Own CLI](https://myowncli.vercel.app) — AI Terminal Assistant
 
 **My Own CLI** is a terminal-based AI assistant built using Python, `agent_sdk`, and `rich`.  
 It allows you to interact with an AI agent directly from your command line in a conversational way.
